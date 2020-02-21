@@ -2,17 +2,125 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Sarah Abdulkerim | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <h1>Sarah Abdulkerim.</h1>
+      <h2>Wellesley College | Computer Science</h2>
+      
     </div>
   </body>
+  <!-- Tab links of page -->
+  <div class = "tab">
+      <button class = "tablinks" onclick = "openInfo(event, 'Home')"> Home </button>
+      <button class = "tablinks" onclick = "openInfo(event, 'About')"> About </button>
+      <button class = "tablinks" onclick = "openInfo(event, 'Computer Science Portfolio')"> Computer Science Portfolio </button>
+      <button class = "tablinks" onclick = "openInfo(event, 'Art Portfolio')" > Art Portfolio </button>
+      <button class = "tablinks" onclick = "openInfo(event, 'Contact')"> Contact </button>
+    </div>
+   <!-- Tab content -->
+   <div id = "Home" class = "tabcontent">
+       <h2> Home </h2>
+       <p> Welcome to my portfolio!</p>
+       <p>I am Sarah Abdulkerim.</p>
+       <p>I am a student studying Computer Science at Wellesley College. </p>
+   </div>
+   <div id = "About" class = "tabcontent">
+       <h2> About </h2>
+       <p> My name is Sarah Abdulkerim. I am a student studying Computer Science at Wellesley College.
+           I have experience programming in Python, C, and Java. As a hobby, I enjoy drawing with 
+           graphite and colored pencil media. I am passionate about software development and am interested 
+           in contributing and broadening both my back-end and front-end skills.  </p>
+   </div>
+   <div id = "Computer Science Portfolio" class = "tabcontent">
+       <h2> Computer Science Portfolio </h2>
+       <h3> Coursework: </h3>
+        <p> Computer Programming & Problem Solving, Computation Structures, Real-Time Systems and Software, Data Structures, Combinatorics & Graph Theory, Introduction to Algorithms</p>
+        <p> Programming Languages: Python, Java, and C </p>
+        <h3> Projects: </h3>
+
+        <!--CS photo gallery grid -->
+        <div class="gallery">
+        <a target="_blank" href="/images/RAT.JPG">
+        <img src="/images/RAT.JPG" alt="2016 United States Election: Analysis of Russian Accounts on Twitter" width="600" height="400">
+        </a>
+        <div class="desc">
+        <h3>2016 United States Election: Analysis of Russian Accounts on Twitter</h3>
+        <ul>
+          <li>Investigated data collected by Wellesley College’s TwitterTrails.com regarding stories promoted by Russian accounts on Twitter</li>
+          <li>Developed and implemented a Graph interface with depth-first search and breadth-first search functionality</li>
+          <li>Determined most active and central Russian accounts, and most propagated story</li>
+        </ul>
+        </div>
+    </div>
+
+        <div class="gallery">
+        <a target="_blank" href="/images/embed.gif">
+        <img src="/images/embed.gif" alt="Real-Time Embedded System" width="600" height="400">
+        </a>
+        <div class="desc">
+            <h3>Real-Time Embedded System</h3>
+            <ul>
+                <li>Collaborated with peer in developing concurrent real-time embedded microcontroller system in C, controlling two robot arms which respond to incoming MIDI encoded audio with mirroring movements</li>
+                <li>Implemented FreeRTOS tasks and ensured overall thread safety by utilizing mutex locks and task notifications</li>
+            </ul>
+        </div>
+    </div>
+        
+</div>
+
+<div id = "Art Portfolio" class = "tabcontent">
+       <h2> Art Portfolio </h2>
+    
+
+        <!--Art photo gallery grid -->
+        <div class="gallery">
+        <a target="_blank" href="/images/blueflowers.jpg">
+        <img src="/images/blueflowers.jpg" alt="Blue Flowers" width="600" height="400">
+        </a>
+    </div>
+
+        <div class="gallery">
+        <a target="_blank" href="/images/fluffy.jpg">
+        <img src="/images/fluffy.jpg" alt="Blossomed Blue Flower" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="/images/pinkflowers.jpg">
+        <img src="/images/pinkflowers.jpg" alt="Pink Flowers" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="/images/pinkrose.jpg">
+        <img src="/images/pinkrose.jpg" alt="Pink Rose" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="/images/yellowflower.jpg">
+        <img src="/images/yellowflower.jpg" alt="A Work in Progress" width="600" height="400">
+        </a>
+        <div class = "desc"> A work in progress </div>
+    </div>
+
+ </div>       
+
+<div id = "Contact" class = "tabcontent">
+    <h2> Contact </h2>
+    <p> Email: abdulkerim.sarah@gmail.com </p>
+    </div>
+       
+
+  
+      
+    
+  
+        
+
+
 </html>

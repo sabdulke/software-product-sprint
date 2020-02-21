@@ -12,17 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+
+//Funtion for page tabs
+function openInfo(evt, info){
+    //Declare vars
+    var i, tabcontent, tablinks;
+
+    //Get all elements with tabcontent
+    tabcontent = document.getElementsByClassName("tabcontent");
+    //Hide the content
+    for (i = 0; i< tabcontent.length; i++){
+        tabcontent[i].style.display = "none";
+    }
+
+    //Get all elements with tablinks
+    tablinks = document.getElementsByClassName("tablinks");
+    //And remove the class active (because inactive unless clicked)
+    for (i = 0; i<tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active","");
+    }
+
+    //Display the current tab
+    document.getElementById(info).style.display = "block";
+    //Mark as active
+    evt.currentTarget.className += " active";
 }
+
+
+
+
+
