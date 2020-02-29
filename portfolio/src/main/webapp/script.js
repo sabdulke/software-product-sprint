@@ -40,6 +40,12 @@ function openInfo(evt, info){
     evt.currentTarget.className += " active";
 }
 
+function getHello(){
+    fetch ('/data').then(response => response.text()).then((hello) => {
+        document.getElementById('hello').innerText = hello;
+    });
+}
+
 
 
 
