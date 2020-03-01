@@ -47,11 +47,13 @@ function openInfo(evt, info){
     
 // }
 function getJson(){
-    fetch('/data').then(response => response.json()).then((jsonObject) =>{
-        const facts = document.getElementById("facts");
+    fetch('/comment').then(response => response.json()).then((jsonObject) =>{
+        const facts = document.getElementById("history");
         facts.innerHTML = "";
-        for (comment in jsonObject){
-            facts.append(jsonObject[comment]);
+        for (str in jsonObject){
+            const liElement = document.createElement('li')
+            liElement.innerText = jsonObject[str];
+            facts.append(liElement);
         }
     });
     
