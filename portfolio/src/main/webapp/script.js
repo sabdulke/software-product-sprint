@@ -40,10 +40,21 @@ function openInfo(evt, info){
     evt.currentTarget.className += " active";
 }
 
-function getHello(){
-    fetch ('/data').then(response => response.text()).then((hello) => {
-        document.getElementById('hello').innerText = hello;
+// function getHello(){
+//     fetch ('/data').then(response => response.text()).then((hello) => {
+//         document.getElementById('hello').innerText = hello;
+//     });
+    
+// }
+function getJson(){
+    fetch('/data').then(response => response.json()).then((jsonObject) =>{
+        const facts = document.getElementById("facts");
+        facts.innerHTML = "";
+        for (comment in jsonObject){
+            facts.append(jsonObject[comment]);
+        }
     });
+    
 }
 
 
