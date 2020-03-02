@@ -17,35 +17,29 @@
 
 //Funtion for page tabs
 function openInfo(evt, info){
-    //Declare vars
-    var i, tabcontent, tablinks;
-
     //Get all elements with tabcontent
-    tabcontent = document.getElementsByClassName("tabcontent");
+    var tabcontent = document.getElementsByClassName("tabcontent");
+
     //Hide the content
-    for (i = 0; i< tabcontent.length; i++){
+    for (var i = 0; i < tabcontent.length; i++){
         tabcontent[i].style.display = "none";
     }
 
     //Get all elements with tablinks
-    tablinks = document.getElementsByClassName("tablinks");
+    var tablinks = document.getElementsByClassName("tablinks");
+
     //And remove the class active (because inactive unless clicked)
-    for (i = 0; i<tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active","");
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
     }
 
     //Display the current tab
     document.getElementById(info).style.display = "block";
     //Mark as active
-    evt.currentTarget.className += " active";
+    evt.currentTarget.classList.add("active");
 }
 
-// function getHello(){
-//     fetch ('/data').then(response => response.text()).then((hello) => {
-//         document.getElementById('hello').innerText = hello;
-//     });
-    
-// }
+
 function getJson(){
     fetch('/comment').then(response => response.json()).then((jsonObject) =>{
         const facts = document.getElementById("history");
@@ -57,6 +51,24 @@ function getJson(){
         }
     });
     
+}
+
+function openForm() {
+  const form = document.getElementById("msgForm");
+  const bton = document.getElementsByClassName("open-button")[0];
+  if (form.style.display == "block") {
+      form.style.display = "none";
+      bton.innerHTML = "Open Comment Box";
+
+      }
+  else{
+    form.style.display = "block";
+    bton.innerHTML = "Close Comment Box";
+  }
+}
+
+function closeForm() {
+  document.getElementById("msgForm").style.display = "none";
 }
 
 
