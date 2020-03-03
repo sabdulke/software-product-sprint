@@ -6,11 +6,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload = "getJson()">
+      
     <div id="content">
       <h1>Sarah Abdulkerim.</h1>
-      <h2>Wellesley College | Computer Science</h2>
-      
+      <h2>Wellesley College | Computer Science</h2> 
+    </div>
+    <button class="open-button" onclick="openForm()" >Close Comment Box</button>
+    <div class = "messagePopUp" id = "msgForm">
+    <form action = "/comment" method = "POST" class = "form-container">
+      <p> Leave Comments Below! </p>
+      <label for = "msg"><b>Comment here</b></label>
+
+      <textarea name = "text-input"> Leave your comments here. </textarea>
+      <button type = "submit" class = "btn" /> Send </button>
+    </form>
     </div>
   </body>
   <!-- Tab links of page -->
@@ -20,6 +30,7 @@
       <button class = "tablinks" onclick = "openInfo(event, 'Computer Science Portfolio')"> Computer Science Portfolio </button>
       <button class = "tablinks" onclick = "openInfo(event, 'Art Portfolio')" > Art Portfolio </button>
       <button class = "tablinks" onclick = "openInfo(event, 'Contact')"> Contact </button>
+      <button class = "tablinks" onclick = "openInfo(event, 'userComment')"> Comments</button>
     </div>
    <!-- Tab content -->
    <div id = "Home" class = "tabcontent">
@@ -113,10 +124,12 @@
 <div id = "Contact" class = "tabcontent">
     <h2> Contact </h2>
     <p> Email: abdulkerim.sarah@gmail.com </p>
-    </div>
+</div>
        
-
-  
+<div id = "userComment" class = "tabcontent">
+    <h2> Comments </h2>
+    <ul id= "history"></ul>
+</div>
       
     
   
