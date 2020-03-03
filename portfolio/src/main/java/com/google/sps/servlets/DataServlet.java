@@ -41,7 +41,7 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Query query = new Query("comment").addSort("timestamp", SortDirection.DESCENDING);;
+        Query query = new Query("comment").addSort("timestamp", SortDirection.DESCENDING);
         messages = new ArrayList<String>();
         PreparedQuery results = datastore.prepare(query);
         for (Entity comment: results.asIterable()){
