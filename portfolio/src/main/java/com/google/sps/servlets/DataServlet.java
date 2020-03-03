@@ -61,7 +61,7 @@ public class DataServlet extends HttpServlet {
 
         Entity commentEntity = new Entity("comment");
         long timestamp = System.currentTimeMillis();
-        commentEntity.setProperty("comment",comment);
+        commentEntity.setProperty("comment", comment);
         commentEntity.setProperty("timestamp",timestamp);
         datastore.put(commentEntity);
 
