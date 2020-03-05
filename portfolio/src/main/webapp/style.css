@@ -57,7 +57,7 @@ div.desc {
   border-top: none;
 }
 
-{box-sizing: border-box;}
+
 
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
@@ -127,4 +127,195 @@ div.desc {
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.parallax {
+  /* The image used */
+  background-image: url("/images/computer.jpg");
+
+  /* Set a specific height */
+  height: 800px;
+}
+
+.parallax2 {
+  /* The image used */
+  background-image: url("/images/computer2.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+}
+
+.parallax3 {
+  /* The image used */
+  background-image: url("/images/computer3.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+}
+
+.parallax4 {
+  /* The image used */
+  background-image: url("/images/computer4.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+}
+
+.parallax5 {
+  /* The image used */
+  background-image: url("/images/last2.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+}
+
+.parallax6 {
+  /* The image used */
+  background-image: url("/images/flow2.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+}
+
+.parallax, .parallax2, .parallax3, .parallax4, .parallax5{
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.caption{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border{
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+h3{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-seriff;
+    color: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.map {
+  border: thin solid black;
+  height: 500px;
+  width: 500px;
 }

@@ -13,7 +13,29 @@
 // limitations under the License.
 
 
+//Onload Functions to be called
+function onLoadFuncs(){
+    getJson();
+    createMap();
+}
 
+/** Creates a map and adds it to the page. */
+function createMap() {
+  const maps = document.getElementsByClassName('map')
+  for (var i = 0; i < maps.length; i++){
+      console.log(maps[i].id);
+      if (maps[i].id == 'MIT'){
+            const map = new google.maps.Map(
+            maps[i],
+            {center: {lat: 42.360091, lng: -71.09416}, zoom: 16});
+      }
+      else if (maps[i].id == 'Wellesley'){
+          const map = new google.maps.Map(
+          maps[i],
+         {center: {lat: 42.293573, lng: -71.305928}, zoom: 16});
+      }
+  }
+}
 
 //Funtion for page tabs
 function openInfo(evt, info){
@@ -72,6 +94,36 @@ function closeForm() {
 }
 
 
+var slideIndex = 1;
+showSlides(slideIndex);
 
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementsByClassName("captions");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  for (i = 0; i < captionText.length; i++) {
+    captionText[i].innerHTML = dots[slideIndex-1].alt;
+  }
+}
 

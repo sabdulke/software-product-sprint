@@ -1,139 +1,207 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Sarah Abdulkerim | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body onload = "getJson()">
-      
-    <div id="content">
-      <h1>Sarah Abdulkerim.</h1>
-      <h2>Wellesley College | Computer Science</h2> 
-    </div>
-    <button class="open-button" onclick="openForm()" >Close Comment Box</button>
-    <div class = "messagePopUp" id = "msgForm">
-    <form action = "/comment" method = "POST" class = "form-container">
-      <p> Leave Comments Below! </p>
-      <label for = "msg"><b>Comment here</b></label>
-
-      <textarea name = "text-input"> Leave your comments here. </textarea>
-      <button type = "submit" class = "btn" /> Send </button>
-    </form>
-    </div>
-  </body>
-  <!-- Tab links of page -->
-  <div class = "tab">
-      <button class = "tablinks" onclick = "openInfo(event, 'Home')"> Home </button>
-      <button class = "tablinks" onclick = "openInfo(event, 'About')"> About </button>
-      <button class = "tablinks" onclick = "openInfo(event, 'Computer Science Portfolio')"> Computer Science Portfolio </button>
-      <button class = "tablinks" onclick = "openInfo(event, 'Art Portfolio')" > Art Portfolio </button>
-      <button class = "tablinks" onclick = "openInfo(event, 'Contact')"> Contact </button>
-      <button class = "tablinks" onclick = "openInfo(event, 'userComment')"> Comments</button>
-    </div>
-   <!-- Tab content -->
-   <div id = "Home" class = "tabcontent">
-       <h2> Home </h2>
-       <p> Welcome to my portfolio!</p>
-       <p>I am Sarah Abdulkerim.</p>
-       <p>I am a student studying Computer Science at Wellesley College. </p>
-   </div>
-   <div id = "About" class = "tabcontent">
-       <h2> About </h2>
-       <p> My name is Sarah Abdulkerim. I am a student studying Computer Science at Wellesley College.
-           I have experience programming in Python, C, and Java. As a hobby, I enjoy drawing with 
-           graphite and colored pencil media. I am passionate about software development and am interested 
-           in contributing and broadening both my back-end and front-end skills.  </p>
-   </div>
-   <div id = "Computer Science Portfolio" class = "tabcontent">
-       <h2> Computer Science Portfolio </h2>
-       <h3> Coursework: </h3>
-        <p> Computer Programming & Problem Solving, Computation Structures, Real-Time Systems and Software, Data Structures, Combinatorics & Graph Theory, Introduction to Algorithms</p>
-        <p> Programming Languages: Python, Java, and C </p>
-        <h3> Projects: </h3>
-
-        <!--CS photo gallery grid -->
-        <div class="gallery">
-        <a target="_blank" href="/images/RAT.JPG">
-        <img src="/images/RAT.JPG" alt="2016 United States Election: Analysis of Russian Accounts on Twitter" width="600" height="400">
-        </a>
-        <div class="desc">
-        <h3>2016 United States Election: Analysis of Russian Accounts on Twitter</h3>
-        <ul>
-          <li>Investigated data collected by Wellesley College’s TwitterTrails.com regarding stories promoted by Russian accounts on Twitter</li>
-          <li>Developed and implemented a Graph interface with depth-first search and breadth-first search functionality</li>
-          <li>Determined most active and central Russian accounts, and most propagated story</li>
-        </ul>
-        </div>
-    </div>
-
-        <div class="gallery">
-        <a target="_blank" href="/images/embed.gif">
-        <img src="/images/embed.gif" alt="Real-Time Embedded System" width="600" height="400">
-        </a>
-        <div class="desc">
-            <h3>Real-Time Embedded System</h3>
-            <ul>
-                <li>Collaborated with peer in developing concurrent real-time embedded microcontroller system in C, controlling two robot arms which respond to incoming MIDI encoded audio with mirroring movements</li>
-                <li>Implemented FreeRTOS tasks and ensured overall thread safety by utilizing mutex locks and task notifications</li>
-            </ul>
-        </div>
-    </div>
-        
-</div>
-
-<div id = "Art Portfolio" class = "tabcontent">
-       <h2> Art Portfolio </h2>
-    
-
-        <!--Art photo gallery grid -->
-        <div class="gallery">
-        <a target="_blank" href="/images/blueflowers.jpg">
-        <img src="/images/blueflowers.jpg" alt="Blue Flowers" width="600" height="400">
-        </a>
-    </div>
-
-        <div class="gallery">
-        <a target="_blank" href="/images/fluffy.jpg">
-        <img src="/images/fluffy.jpg" alt="Blossomed Blue Flower" width="600" height="400">
-        </a>
-    </div>
-
-    <div class="gallery">
-        <a target="_blank" href="/images/pinkflowers.jpg">
-        <img src="/images/pinkflowers.jpg" alt="Pink Flowers" width="600" height="400">
-        </a>
-    </div>
-
-    <div class="gallery">
-        <a target="_blank" href="/images/pinkrose.jpg">
-        <img src="/images/pinkrose.jpg" alt="Pink Rose" width="600" height="400">
-        </a>
-    </div>
-
-    <div class="gallery">
-        <a target="_blank" href="/images/yellowflower.jpg">
-        <img src="/images/yellowflower.jpg" alt="A Work in Progress" width="600" height="400">
-        </a>
-        <div class = "desc"> A work in progress </div>
-    </div>
-
- </div>       
-
-<div id = "Contact" class = "tabcontent">
-    <h2> Contact </h2>
-    <p> Email: abdulkerim.sarah@gmail.com </p>
-</div>
-       
-<div id = "userComment" class = "tabcontent">
-    <h2> Comments </h2>
-    <ul id= "history"></ul>
-</div>
-      
-    
+    <head>
+        <meta charset="UTF-8">
+        <title>Sarah Abdulkerim | Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9bxbeKJgcnN8iVIWcrWTEITev5TbRQBI"></script>
+        <script src="script.js"></script>
+    </head>
   
-        
+    <body onload = "onLoadFuncs()"></body>
 
+    <div class="parallax">
+
+        <div class = "caption">
+            <span class = "border">
+                Sarah Abdulkerim.<br><br><br>Wellesley College | Computer Science<br><br><br>
+                <a href = '#intro'><button>Introduction!</button></a> 
+            </span>
+        </div>
+    </div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id = "intro">
+        <h3 style="text-align:center;">
+            <p> Welcome to my portfolio!</p>
+            <p>I am Sarah Abdulkerim.</p>
+            <p>I am a student studying Computer Science at Wellesley College. </p>
+            <a href = '#about'><button>About Me!</button></a>
+        </h3>
+    </div>
+
+    <div class="parallax2"></div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id = "about">
+        <h3 style="text-align:center;">
+            <h3> About </h3>
+            <p> My name is Sarah Abdulkerim. I am a student studying Computer Science at Wellesley College.
+                I have experience programming in Python, C, and Java. As a hobby, I enjoy drawing with 
+                graphite and colored pencil media. I am passionate about software development and am interested 
+                in contributing and broadening both my back-end and front-end skills.  
+            </p>
+            <a href = '#cs'><button>Computer Sciene Portfolio!</button></a>
+        </h3>
+    </div>
+
+    <div class="parallax3"></div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="cs">
+        <h3 style="text-align:center;">
+            <h3> Computer Science Portfolio </h3>
+            <h2> Coursework: </h2>
+            <p> Computer Programming & Problem Solving, Computation Structures, Real-Time Systems and Software, Data Structures, Combinatorics & Graph Theory, Introduction to Algorithms</p>
+            <p> Programming Languages: Python, Java, and C </p>
+            <h2> Projects: </h2>
+            <div class="map" id = "MIT"></div>
+            <div class="map" id = "Wellesley"></div>
+            <!-- Container for the image gallery -->
+                <div class="container">
+
+                    <!-- Full-width images with number text -->
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 2</div>
+                        <img src="/images/RAT.JPG" style="width:50%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 2</div>
+                        <img src="/images/embed.gif" style="width:50%">
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Image text -->
+                    <div class="caption-container">
+                        <p class="captions"></p>
+                    </div>
+
+                    <!-- Thumbnail images -->
+                    <div class="row">
+
+                        <div class="column">
+                            <img class="demo cursor" src="/images/RAT.JPG" style="width:50%" onclick="currentSlide(1)" alt="2016 United States Election: Analysis of Russian Accounts on Twitter\n
+                                    Investigated data collected by Wellesley College’s TwitterTrails.com regarding stories promoted by Russian accounts on Twitter\n
+                                    Developed and implemented a Graph interface with depth-first search and breadth-first search functionality\n
+                                    Determined most active and central Russian accounts, and most propagated story">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo cursor" src="/images/embed.gif" style="width:50%" onclick="currentSlide(2)" alt="Real-Time Embedded System\n
+                                    Collaborated with peer in developing concurrent real-time embedded microcontroller system in C, controlling two robot arms which respond to incoming MIDI encoded audio with mirroring movements\n
+                                    Implemented FreeRTOS tasks and ensured overall thread safety by utilizing mutex locks and task notifications">
+                        </div>
+    
+                     </div>
+                </div>
+            <a href = "#art"><button> Art Portfolio! </button></a>
+        </h3>
+    </div>
+
+    <div class="parallax4"></div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="art">
+        <h3 style="text-align:center;">
+            Art Portfolio
+            <!-- Container for the image gallery -->
+            <div class="container">
+
+                <!-- Full-width images with number text -->
+                <div class="mySlides">
+                    <div class="numbertext">1 / 5</div>
+                    <img src="/images/blueflowers.jpg" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 5</div>
+                    <img src="/images/fluffy.jpg" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 5</div>
+                    <img src="/images/pinkflowers.jpg" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 5</div>
+                    <img src="/images/pinkrose.jpg" style="width:50%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">5 / 5</div>
+                    <img src="/images/yellowflower.jpg" style="width:50%">
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Image text -->
+                <div class="caption-container">
+                    <p class="captions"></p>
+                </div>
+
+                <!-- Thumbnail images -->
+                <div class="row">
+
+                    <div class="column">
+                        <img class="demo cursor" src="/images/blueflowers.jpg" style="width:50%" onclick="currentSlide(1)" alt="Blue Flowers">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo cursor" src="/images/fluffy.jpg" style="width:50%" onclick="currentSlide(2)" alt="Blossomed Blue Flowers">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo cursor" src="/images/pinkflowers.jpg" style="width:50%" onclick="currentSlide(3)" alt="Pink Flowers">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo cursor" src="/images/pinkrose.jpg" style="width:50%" onclick="currentSlide(4)" alt="Pink Rose">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo cursor" src="/images/yellowflower.jpg" style="width:50%" onclick="currentSlide(5)" alt="Yellow Flower - A work in progress">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href = "#com"><button> Comments! </button></a>
+        </h3>
+    </div> 
+
+    <div class="parallax5"></div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="com">
+        <h3 style="text-align:center;">
+            Comments
+
+            <button class="open-button" onclick="openForm()" >Close Comment Box</button>
+            <div class = "messagePopUp" id = "msgForm">
+                <form action = "/comment" method = "POST" class = "form-container">
+                    <label for = "msg"><b>Comment here</b></label>
+                    <textarea name = "text-input"> Leave your comments here. </textarea>
+                    <button type = "submit" class = "btn" /> Send </button>
+                </form>
+            </div>
+
+            <ul id= "history"></ul>
+
+        </h3>
+    </div>
+
+    <div class="parallax6"></div>
+
+        <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="com">
+            <h3 style="text-align:center;">
+                Contact
+                <p> Email: abdulkerim.sarah@gmail.com </p>
+            </h3>
+        </div>
+
+    </div>
 
 </html>
