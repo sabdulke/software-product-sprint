@@ -24,120 +24,191 @@ function createMap() {
   const mit = [42.360091, -71.09416]
   const welles = [42.293573,-71.305928]
   var mapCoord;
-  const maps = document.getElementsByClassName('map')
+  var project;
+  var contentString;
+  const maps = document.getElementsByClassName('map');
+
   for (var i = 0; i < maps.length; i++){
-      if (maps[i].id == 'MIT') mapCoord = mit;
-      else if (maps[i].id == 'Wellesley') mapCoord = welles;
-      const map = new google.maps.Map(
-            maps[i],
-            {center: {lat: mapCoord[0], lng: mapCoord[1]}, zoom: 16},
-            [
-                {
-                    "elementType": "labels.text.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#400080"
-                                    }
-                                ]
-                },
 
-                {
-                    "featureType": "administrative",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#ecd7e9"
-                                    }
-                                ]
-                },
+      if (maps[i].id == 'MIT'){
+          mapCoord = mit;
+          project = 'Real-Time Embedded System';
+          contentString = '<h1> Real-Time Embedded System </h1>'+
+                            '<p> Collaborated with peer in developing concurrent real-time embedded microcontroller system in C, controlling two robot arms which respond to incoming MIDI encoded audio with mirroring movements</p>' +
+                            '<p> Implemented FreeRTOS tasks and ensured overall thread safety by utilizing mutex locks and task notifications</p>';
+                            } 
 
-                {
-                    "featureType": "landscape",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#ddb8de"
-                                    }
-                                ]
-                },
+      else if (maps[i].id == 'Wellesley'){
+          mapCoord = welles;
+          project = '2016 United States Election: Analysis of Russian Accounts on Twitter';
+          contentString = '<h1> 2016 United States Election: Analysis of Russian Accounts on Twitter </h1>'+
+                          '<p> Investigated data collected by Wellesley College’s TwitterTrails.com regarding stories promoted by Russian accounts on Twitter </p>' +
+                          '<p> Developed and implemented a Graph interface with depth-first search and breadth-first search functionality </p>' +
+                          '<p> Determined most active and central Russian accounts, and most propagated story </p>';
+                        }
 
-                {
-                    "featureType": "poi",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#ffaaff"
-                                    }
-                                ]
-                },
+      var map = new google.maps.Map(
+                                        maps[i],
+                                        {
+                                            center: {
+                                                        lat: mapCoord[0], 
+                                                        lng: mapCoord[1]
+                                                    }, 
+                                            zoom: 10
+                                        },
+                                        [
+                                            {
+                                                "elementType": "labels.text.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#400080"
+                                                                }
+                                                            ]
+                                            },
 
-                {
-                    "featureType": "poi",
-                    "elementType": "labels",
-                    "stylers": [
-                                    {
-                                        "color": "#efcff3"
-                                    }
-                                ]
-                },
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "geometry.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#ecd7e9"
+                                                                }
+                                                            ]
+                                            },
 
-                {
-                    "featureType": "poi",
-                    "elementType": "labels.text.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#7a00f4"
-                                    }
-                                ]
-                },
+                                            {
+                                                "featureType": "landscape",
+                                                "elementType": "geometry.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#ddb8de"
+                                                                }
+                                                            ]
+                                            },
 
-                {
-                    "featureType": "road",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#ff88c4"
-                                    }
-                                ]
-                },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "geometry.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#ffaaff"
+                                                                }
+                                                            ]
+                                            },
 
-                {
-                    "featureType": "road",
-                    "elementType": "geometry.stroke",
-                    "stylers": [
-                                    {
-                                        "color": "#ff4da6"
-                                    }
-                                ]
-                },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "labels",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#efcff3"
+                                                                }
+                                                            ]
+                                            },
 
-                {
-                    "featureType": "transit",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#ff00ff"
-                                    }
-                                ]
-                },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#7a00f4"
+                                                                }
+                                                            ]
+                                            },
 
-                {
-                    "featureType": "water",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                                    {
-                                        "color": "#c4a0de"
-                                    }
-                                ]
-                }
-            ]);
-      const trexMarker = new google.maps.Marker({
-            position: {lat: mapCoord[0], lng: mapCoord[1]},
-            map: map,
-            title: 'Stan the T-Rex'
-                                                });
-        }
+                                            {
+                                                "featureType": "road",
+                                                "elementType": "geometry.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#ff88c4"
+                                                                }
+                                                            ]
+                                            },
+
+                                            {
+                                                "featureType": "road",
+                                                "elementType": "geometry.stroke",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#ff4da6"
+                                                                }
+                                                            ]
+                                            },
+
+                                            {
+                                                "featureType": "transit",
+                                                "elementType": "geometry.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#ff00ff"
+                                                                }
+                                                            ]
+                                            },
+
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "geometry.fill",
+                                                "stylers": 
+                                                            [
+                                                                {
+                                                                    "color": "#c4a0de"
+                                                                }
+                                                            ]
+                                            }
+                                        ]
+                                    );
+            
+      var marker = new google.maps.Marker(
+                                            {
+                                                position: 
+                                                            {
+                                                                lat: mapCoord[0],
+                                                                lng: mapCoord[1]
+                                                            },
+                                                map: map,
+                                                title: project
+                                            }
+                                        );
+
+        map.addListener('center_changed', function() {
+    // 6 seconds after the center of the map has changed, pan back to the
+    // marker.
+    window.setTimeout(function() {
+      map.panTo(marker.getPosition());
+    }, 6000);
+  });
+
+      var infowindow = new google.maps.InfoWindow(
+                                                    {
+                                                        content: contentString
+                                                    }
+                                                );
+                        
+    
+      infoWindowMarker(map, marker, infowindow);
     }
+}
+
+function infoWindowMarker(map, marker, infowindow){
+    
+    marker.addListener('click', function() 
+                                            {
+                                                map.setZoom(14);
+                                                map.setCenter(marker.getPosition());
+                                                infowindow.open(map, this);
+                                            } 
+                        );
+}
 
 //Funtion for page tabs
 function openInfo(evt, info){
@@ -214,18 +285,17 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementsByClassName("captions");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  for (i = 0; i < captionText.length; i++) {
-    captionText[i].innerHTML = dots[slideIndex-1].alt;
-  }
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+  for (i = 0; i < slides.length; i++) if (slides[i] != null) slides[i].style.display = "none";
+  
+  for (i = 0; i < dots.length; i++) if (dots[i] != null) dots[i].className = dots[i].className.replace(" active", "");
+  
+ 
+  if (slides[slideIndex-1] != null) slides[slideIndex-1].style.display = "block";
+  if (dots[slideIndex-1] != null) dots[slideIndex-1].className += " active";
+  
+  for (i = 0; i < captionText.length; i++) captionText[i].innerHTML = dots[slideIndex-1].alt;
+  
 }
 
