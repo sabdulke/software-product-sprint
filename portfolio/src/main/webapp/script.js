@@ -197,6 +197,7 @@ function createMap() {
     
       infoWindowMarker(map, marker, infowindow);
     }
+    
 }
 
 function infoWindowMarker(map, marker, infowindow){
