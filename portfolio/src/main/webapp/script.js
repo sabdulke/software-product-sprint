@@ -21,21 +21,123 @@ function onLoadFuncs(){
 
 /** Creates a map and adds it to the page. */
 function createMap() {
+  const mit = [42.360091, -71.09416]
+  const welles = [42.293573,-71.305928]
+  var mapCoord;
   const maps = document.getElementsByClassName('map')
   for (var i = 0; i < maps.length; i++){
-      console.log(maps[i].id);
-      if (maps[i].id == 'MIT'){
-            const map = new google.maps.Map(
+      if (maps[i].id == 'MIT') mapCoord = mit;
+      else if (maps[i].id == 'Wellesley') mapCoord = welles;
+      const map = new google.maps.Map(
             maps[i],
-            {center: {lat: 42.360091, lng: -71.09416}, zoom: 16});
-      }
-      else if (maps[i].id == 'Wellesley'){
-          const map = new google.maps.Map(
-          maps[i],
-         {center: {lat: 42.293573, lng: -71.305928}, zoom: 16});
-      }
-  }
-}
+            {center: {lat: mapCoord[0], lng: mapCoord[1]}, zoom: 16},
+            [
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#400080"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#ecd7e9"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "landscape",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#ddb8de"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "poi",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#ffaaff"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "poi",
+                    "elementType": "labels",
+                    "stylers": [
+                                    {
+                                        "color": "#efcff3"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#7a00f4"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "road",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#ff88c4"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "road",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                                    {
+                                        "color": "#ff4da6"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "transit",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#ff00ff"
+                                    }
+                                ]
+                },
+
+                {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                                    {
+                                        "color": "#c4a0de"
+                                    }
+                                ]
+                }
+            ]);
+      const trexMarker = new google.maps.Marker({
+            position: {lat: mapCoord[0], lng: mapCoord[1]},
+            map: map,
+            title: 'Stan the T-Rex'
+                                                });
+        }
+    }
 
 //Funtion for page tabs
 function openInfo(evt, info){

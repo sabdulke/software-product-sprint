@@ -318,4 +318,6 @@ body {
   border: thin solid black;
   height: 500px;
   width: 500px;
+  background-image: url(https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyB9bxbeKJgcnN8iVIWcrWTEITev5TbRQBI&center=47.65,-122.35&zoom=12&format=png&maptype=roadmap&style=element:labels.text.fill%7Ccolor:0x400080&style=feature:administrative%7Celement:geometry.fill%7Ccolor:0xecd7e9&style=feature:landscape%7Celement:geometry.fill%7Ccolor:0xddb8de&style=feature:poi%7Celement:geometry.fill%7Ccolor:0xffaaff&style=feature:poi%7Celement:labels%7Ccolor:0xefcff3&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x7a00f4&style=feature:road%7Celement:geometry.fill%7Ccolor:0xff88c4&style=feature:road%7Celement:geometry.stroke%7Ccolor:0xff4da6&style=feature:transit%7Celement:geometry.fill%7Ccolor:0xff00ff&style=feature:water%7Celement:geometry.fill%7Ccolor:0xc4a0de&size=480x360);
 }
+
