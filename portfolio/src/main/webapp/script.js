@@ -12,11 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+var slideIndex = 1;
 
 //Onload Functions to be called
 function onLoadFuncs(){
     getJson();
     createMap();
+    showSlides(slideIndex);
 }
 
 /** Creates a map and adds it to the page. */
@@ -55,117 +57,7 @@ function createMap() {
                                                         lng: mapCoord[1]
                                                     }, 
                                             zoom: 10
-                                        },
-                                        [
-                                            {
-                                                "elementType": "labels.text.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#400080"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "administrative",
-                                                "elementType": "geometry.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#ecd7e9"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "landscape",
-                                                "elementType": "geometry.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#ddb8de"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "poi",
-                                                "elementType": "geometry.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#ffaaff"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "poi",
-                                                "elementType": "labels",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#efcff3"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "poi",
-                                                "elementType": "labels.text.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#7a00f4"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "road",
-                                                "elementType": "geometry.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#ff88c4"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "road",
-                                                "elementType": "geometry.stroke",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#ff4da6"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "transit",
-                                                "elementType": "geometry.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#ff00ff"
-                                                                }
-                                                            ]
-                                            },
-
-                                            {
-                                                "featureType": "water",
-                                                "elementType": "geometry.fill",
-                                                "stylers": 
-                                                            [
-                                                                {
-                                                                    "color": "#c4a0de"
-                                                                }
-                                                            ]
-                                            }
-                                        ]
+                                        }
                                     );
             
       var marker = new google.maps.Marker(
@@ -197,6 +89,7 @@ function createMap() {
     
       infoWindowMarker(map, marker, infowindow);
     }
+    
 }
 
 function infoWindowMarker(map, marker, infowindow){
@@ -267,8 +160,7 @@ function closeForm() {
 }
 
 
-var slideIndex = 1;
-showSlides(slideIndex);
+
 
 // Next/previous controls
 function plusSlides(n) {
@@ -283,19 +175,18 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementsByClassName("captions");
-  if (n > slides.length) slideIndex = 1;
-  if (n < 1) slideIndex = slides.length;
-  for (i = 0; i < slides.length; i++) if (slides[i] != null) slides[i].style.display = "none";
-  
-  for (i = 0; i < dots.length; i++) if (dots[i] != null) dots[i].className = dots[i].className.replace(" active", "");
-  
- 
-  if (slides[slideIndex-1] != null) slides[slideIndex-1].style.display = "block";
-  if (dots[slideIndex-1] != null) dots[slideIndex-1].className += " active";
-  
-  for (i = 0; i < captionText.length; i++) captionText[i].innerHTML = dots[slideIndex-1].alt;
-  
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
+
+
 

@@ -22,6 +22,8 @@ public class Greeter {
    * Returns a greeting for the given name.
    */
   public String greet(String name) {
-    return "Hello " + name;
+    String finalName = "";
+    for (String let : name.trim().split("")) if (!(let.equals("%") || let.equals("@") || let.equals("#") || let.equals("$"))) finalName += let;
+    return "Hello " + finalName;
   }
 }

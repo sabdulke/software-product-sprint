@@ -15,133 +15,118 @@
     <div class="parallax">
 
         <div class = "caption">
+            <img src = "images/profile.jpg"></img>
+            <br><br><br>
             <span class = "border">
-                Sarah Abdulkerim.<br><br><br>Wellesley College | Computer Science<br><br><br>
-                <a href = '#intro'><button>Introduction!</button></a> 
+                Sarah Abdulkerim.<br><br><br>Wellesley College | Computer Science
             </span>
+            <h3><a href = '#intro'>Introduction</a></h3>
         </div>
     </div>
 
-    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id = "intro">
-        <h3 style="text-align:center;">
-            <p> Welcome to my portfolio!</p>
-            <p>I am Sarah Abdulkerim.</p>
-            <p>I am a student studying Computer Science at Wellesley College. </p>
-            <a href = '#about'><button>About Me!</button></a>
+    <div class = "info" id = "intro">
+        <h3>
+            Welcome to my portfolio! <br>
+            I am Sarah Abdulkerim. <br>
+            I am a student studying Computer Science at Wellesley College.<br>
+            <a href = '#about'>About</a>
         </h3>
     </div>
 
     <div class="parallax2"></div>
 
-    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id = "about">
-        <h3 style="text-align:center;">
-            <h3> About </h3>
+    <div class = "info" id = "about">
+        <h3>About </h3>
             <p> My name is Sarah Abdulkerim. I am a student studying Computer Science at Wellesley College.
                 I have experience programming in Python, C, and Java. As a hobby, I enjoy drawing with 
                 graphite and colored pencil media. I am passionate about software development and am interested 
                 in contributing and broadening both my back-end and front-end skills.  
             </p>
-            <a href = '#cs'><button>Computer Sciene Portfolio!</button></a>
-        </h3>
+        <h3><a href = '#cs'>Computer Science Portfolio</a></h3>
     </div>
 
     <div class="parallax3"></div>
 
 
-    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="cs">
-        <h3 style="text-align:center;">
-            <h3> Computer Science Portfolio </h3>
+    <div class = "info" id ="cs">
+        <h3>
+            Computer Science Portfolio
             <h2> Coursework: </h2>
             <p> Computer Programming & Problem Solving, Computation Structures, Real-Time Systems and Software, Data Structures, Combinatorics & Graph Theory, Introduction to Algorithms</p>
             <p> Programming Languages: Python, Java, and C </p>
             <h2> Projects: </h2>
             <div class="map" id = "MIT"></div>
             <div class="map" id = "Wellesley"></div>
-            <a href = "#art"><button> Art Portfolio! </button></a>
+            <a href = "#art"> Art Portfolio </a>
         </h3>
     </div>
 
+
     <div class="parallax4"></div>
 
-    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="art">
-        <h3 style="text-align:center;">
+    <div class = "info" id ="art">
+        <h3>
             Art Portfolio
             <!-- Container for the image gallery -->
-            <div class="container">
+            <div class="slideshow-container">
 
                 <!-- Full-width images with number text -->
-                <div class="mySlides">
-                    <div class="numbertext">1 / 5</div>
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 6</div>
                     <img src="/images/blueflowers.jpg" style="width:50%">
                 </div>
 
-                <div class="mySlides">
-                    <div class="numbertext">2 / 5</div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 6</div>
                     <img src="/images/fluffy.jpg" style="width:50%">
                 </div>
 
-                <div class="mySlides">
-                    <div class="numbertext">3 / 5</div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 6</div>
                     <img src="/images/pinkflowers.jpg" style="width:50%">
                 </div>
 
-                <div class="mySlides">
-                    <div class="numbertext">4 / 5</div>
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 6</div>
                     <img src="/images/pinkrose.jpg" style="width:50%">
                 </div>
 
-                <div class="mySlides">
-                    <div class="numbertext">5 / 5</div>
-                    <img src="/images/yellowflower.jpg" style="width:50%">
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="/images/yellowflowers.jpg" style="width:50%">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="/images/purpleback1.jpg" style="width:50%">
                 </div>
 
                 <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                <!-- Image text -->
-                <div class="caption-container">
-                    <p class="captions"></p>
-                </div>
-
-                <!-- Thumbnail images -->
-                <div class="row">
-
-                    <div class="column">
-                        <img class="demo cursor" src="/images/blueflowers.jpg" style="width:50%" onclick="currentSlide(1)" alt="Blue Flowers">
-                    </div>
-
-                    <div class="column">
-                        <img class="demo cursor" src="/images/fluffy.jpg" style="width:50%" onclick="currentSlide(2)" alt="Blossomed Blue Flowers">
-                    </div>
-
-                    <div class="column">
-                        <img class="demo cursor" src="/images/pinkflowers.jpg" style="width:50%" onclick="currentSlide(3)" alt="Pink Flowers">
-                    </div>
-
-                    <div class="column">
-                        <img class="demo cursor" src="/images/pinkrose.jpg" style="width:50%" onclick="currentSlide(4)" alt="Pink Rose">
-                    </div>
-
-                    <div class="column">
-                        <img class="demo cursor" src="/images/yellowflower.jpg" style="width:50%" onclick="currentSlide(5)" alt="Yellow Flower - A work in progress">
-                    </div>
-
-                </div>
-
             </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+            
 
-            <a href = "#com"><button> Comments! </button></a>
+            <a href = "#com"> Comments </a>
         </h3>
     </div> 
 
     <div class="parallax5"></div>
 
-    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="com">
-        <h3 style="text-align:center;">
+    <div class = "info" id ="com">
+        <h3>
             Comments
 
-            <button class="open-button" onclick="openForm()" >Close Comment Box</button>
+            <div class = "up"><span><a href= "#">&#8593;</a></span></div>
             <div class = "messagePopUp" id = "msgForm">
                 <form action = "/comment" method = "POST" class = "form-container">
                     <label for = "msg"><b>Comment here</b></label>
@@ -157,8 +142,8 @@
 
     <div class="parallax6"></div>
 
-        <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id ="com">
-            <h3 style="text-align:center;">
+        <div class = "info" id ="cont">
+            <h3>
                 Contact
                 <p> Email: abdulkerim.sarah@gmail.com </p>
             </h3>

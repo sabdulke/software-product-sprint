@@ -60,13 +60,13 @@ div.desc {
 
 
 /* Button used to open the chat form - fixed at the bottom of the page */
-.open-button {
+.up {
   background-color: #555;
-  color: white;
+  /* color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.8; */
   position: fixed;
   bottom: 23px;
   right: 28px;
@@ -133,6 +133,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.info{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    /* text-align: justify; */
+}
 
 .parallax {
   /* The image used */
@@ -200,6 +207,8 @@ html {
     color: #000;
 }
 
+
+
 .caption span.border{
     background-color: #111;
     color: #fff;
@@ -213,6 +222,7 @@ h3{
     text-transform: uppercase;
     font: 20px "Lato", sans-seriff;
     color: #111;
+    text-align:center;
 }
 
 * {
@@ -227,13 +237,13 @@ body {
 
 
 
-* {
-  box-sizing: border-box;
-}
+* {box-sizing:border-box}
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
   position: relative;
+  margin: auto;
 }
 
 /* Hide the images by default */
@@ -241,26 +251,28 @@ body {
   display: none;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
+img {
+    vertical-align: middle;
 }
 
 /* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
+.prev, .next {
   position: absolute;
-  top: 40%;
+  cursor: pointer;
+  top: 50%;
   width: auto;
+  margin-top: -22px;
   padding: 16px;
-  margin-top: -50px;
-  color: white;
+  color: black;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+  transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  -webkit-user-select: none;
+}
+
+.prev{
+    left:0;
 }
 
 /* Position the "next button" to the right */
@@ -270,53 +282,91 @@ body {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.prev:hover, .next:hover {
+  background-color: rgba(235, 103, 235, 0.267);
+}
+
+/* Caption text */
+.text {
+  color: #bf0ac5b2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: #dddcdce3;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
 }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.active, .dot:hover {
+  background-color: #717171;
 }
 
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
-.active,
-.demo:hover {
-  opacity: 1;
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
+
+
 
 .map {
   border: thin solid black;
   height: 500px;
   width: 500px;
+  margin: 5px;
+  float: left;
+
+}
+
+img[src = "images/profile.jpg"]{
+    border-radius: 50%;
+    width: 200px;
+}
+
+/*Button Style*/
+a:link, a:visited {
+  background-color: grey;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: black;
 }
 

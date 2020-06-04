@@ -18,6 +18,10 @@ import java.util.Collection;
 
 public final class FindMeetingQuery {
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
+    Collection<TimeRange> times = new Collection();
+    for (String attend : request.getAttendees()){
+        
+    }
     throw new UnsupportedOperationException("TODO: Implement this method.");
   }
 }
